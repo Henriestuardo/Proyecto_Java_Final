@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import org.springframework.data.annotation.Id;
 import java.time.LocalDate;
 
+// Anotación @Entity se requiere para que JPA reconozca la clase como una entidad persistente.
 @Entity
 public class Loan {
     @Id

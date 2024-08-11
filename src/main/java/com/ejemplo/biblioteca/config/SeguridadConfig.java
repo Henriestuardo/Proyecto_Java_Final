@@ -17,12 +17,13 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class SeguridadConfig extends WebSecurityConfigurerAdapter{
 
-
+    // Define el codificador de contraseñas.
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    // Define el AuthenticationManager con autenticación en memoria.
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http, AuthenticationConfiguration authConfig) throws Exception {
         AuthenticationManagerBuilder authenticationManagerBuilder =

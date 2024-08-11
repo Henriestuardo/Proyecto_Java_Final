@@ -1,0 +1,71 @@
+
+                                    Introducción
+
+Hola, mi nombre es Henri Estuardo Galdámez Ortiz.
+Hoy les presentare mi proyecto: un Sistema de Gestión de Biblioteca.
+
+Este sistema está diseñado para gestionar libros, préstamos y usuarios de una biblioteca.
+Utilicé MySQL como mi base de datos relacional para manejar la información estructurada,
+como los préstamos, y MongoDB para almacenar datos de libros que requieren una estructura más flexible.
+Además, implementamos seguridad mediante JWT para proteger las operaciones y pruebas unitarias para asegurar
+el correcto funcionamiento del sistema.
+
+
+
+                                   Demostración del Código
+
+Controladores REST:
+BookController: Gestiona las operaciones CRUD para los libros. Los métodos permiten agregar, obtener,
+actualizar y eliminar libros en la base de datos MongoDB.
+
+LoanController: Maneja los préstamos, que se almacenan en MySQL. Permite realizar operaciones CRUD sobre
+los registros de préstamos.
+
+UserController: Controla las operaciones CRUD para los usuarios del sistema, almacenados en MySQL.
+Lógica de Negocio y Base de Datos:
+
+Modelos:
+Book: Representa un libro con atributos como id, title, author e isbn. Se utiliza con MongoDB.
+Loan: Representa un préstamo con atributos como id, bookId, userId, loanDate, y returnDate. Se usa con MySQL.
+User: Representa un usuario con atributos id, username, y password. También se almacena en MySQL.
+
+Repositorios:
+BookRepository: Interfaz para manejar operaciones CRUD en MongoDB.
+LoanRepository y UserRepository: Interfaces para manejar operaciones CRUD en MySQL.
+
+Implementación de Seguridad con JWT:
+Implementamos JWT (JSON Web Tokens) para autenticar y autorizar a los usuarios.
+Los tokens aseguran que solo los usuarios autorizados puedan realizar operaciones críticas en el sistema.
+Pruebas Unitarias:
+
+He escrito pruebas unitarias para asegurar que cada componente del sistema funcione correctamente y maneje
+los datos según lo esperado. Las pruebas cubren los controladores, repositorios y servicios.
+
+Seguridad y Pruebas:
+Aunque la implementación actual no incluye seguridad con JWT o pruebas unitarias detalladas,
+estos son componentes importantes que se pueden agregar para mejorar la seguridad y la confiabilidad del sistema
+en una fase futura.
+
+
+                                Ejecución y Demostración de Funcionalidades
+
+
+Inicio del Sistema: Muestra cómo se inicia la aplicación y cómo se conecta a las bases de datos MySQL y MongoDB.
+
+Demostración de CRUD:
+
+Crear un Libro: Demuestra cómo se agrega un libro a la base de datos MongoDB mediante el endpoint POST /books.
+
+Leer Libros: Muestra cómo se obtienen todos los libros con el endpoint GET /books.
+
+Actualizar un Libro: Demuestra la actualización de un libro existente.
+
+Eliminar un Libro: Muestra cómo se elimina un libro de la base de datos.
+
+Operaciones de Préstamos y Usuarios:
+Realiza operaciones similares para los préstamos y usuarios, mostrando la persistencia de datos en MySQL.
+
+Integración del Sistema:
+Muestra cómo las diferentes partes del código interactúan entre sí, desde la entrada del usuario hasta la
+persistencia de datos y la respuesta del sistema.
+
